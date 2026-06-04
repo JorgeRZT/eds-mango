@@ -31,3 +31,32 @@
     order: unset;
   }
 }
+
+/* Horizontal scroll for product grids with 4+ columns on mobile */
+@media (width < 900px) {
+  .columns.columns-4-cols > div,
+  .columns.columns-5-cols > div,
+  .columns.columns-6-cols > div {
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+  }
+
+  .columns.columns-4-cols > div::-webkit-scrollbar,
+  .columns.columns-5-cols > div::-webkit-scrollbar,
+  .columns.columns-6-cols > div::-webkit-scrollbar {
+    display: none;
+  }
+
+  .columns.columns-4-cols > div > div,
+  .columns.columns-5-cols > div > div,
+  .columns.columns-6-cols > div > div {
+    min-width: 75vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    order: unset;
+  }
+}

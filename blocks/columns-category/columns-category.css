@@ -1,6 +1,6 @@
 /* Block: columns-category
  * Two category images side-by-side (50/50), edge-to-edge, no gap.
- * Each column is a clickable link with image and text label at the bottom.
+ * Each column is a clickable link with image and text overlay at the bottom.
  * Source: Mango Home — FamilyBannerShop-module */
 
 /* Full-width wrapper override */
@@ -42,23 +42,48 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
 
-/* Category label at the bottom, overlaying the image */
-.columns-category .category-label {
-  position: relative;
+.columns-category .category-link:hover picture img {
+  transform: scale(1.03);
+}
+
+/* Text overlay container at the bottom of the image */
+.columns-category .category-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
   display: flex;
-  align-items: flex-end;
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
+  gap: 4px;
   padding: 32px;
   box-sizing: border-box;
+}
+
+/* Category title — larger, prominent */
+.columns-category .category-title {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: rgb(253 253 253);
+  text-shadow: rgb(0 0 0 / 20%) 0 1px 4px;
+}
+
+/* CTA — "Ver todo" style */
+.columns-category .category-cta {
+  display: block;
   font-size: 13px;
   font-weight: 600;
   line-height: 20px;
   text-transform: uppercase;
   color: rgb(253 253 253);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* Desktop: side by side, no gap */
@@ -69,5 +94,9 @@
 
   .columns-category > div > div {
     flex: 1;
+  }
+
+  .columns-category .category-title {
+    font-size: 24px;
   }
 }

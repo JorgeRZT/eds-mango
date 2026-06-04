@@ -28,7 +28,7 @@
   z-index: 0;
 }
 
-/* Row 2: Content overlay - centered logo + CTA */
+/* Row 2: Content overlay - centered logo + CTA, fades in on scroll */
 .hero-branded > div:last-child {
   position: relative;
   z-index: 1;
@@ -40,23 +40,12 @@
   min-height: 80svh;
   gap: 12px;
   text-align: center;
+  opacity: 0;
+  transition: opacity 0.9s ease;
 }
 
-.hero-branded > div:first-child > div {
-  height: 100%;
-  width: 100%;
-}
-
-.hero-branded > div:first-child picture {
-  display: block;
-  height: 100%;
-  width: 100%;
-}
-
-.hero-branded > div:first-child img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.hero-branded > div:last-child.visible {
+  opacity: 1;
 }
 
 /* Logo image */
@@ -88,9 +77,33 @@
   padding: 0;
 }
 
+.hero-branded > div:first-child > div {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-branded > div:first-child picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-branded > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* no-image variant (no background) */
 .hero-branded.no-image > div:last-child a:any-link {
   color: var(--text-color);
+}
+
+/* Ensure content is visible if JS doesn't run */
+@media (prefers-reduced-motion: reduce) {
+  .hero-branded > div:last-child {
+    opacity: 1;
+  }
 }
 
 @media (width >= 900px) {
