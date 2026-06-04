@@ -26,7 +26,7 @@ const PAGE_TEMPLATE = {
   blocks: [
     {
       name: 'hero-campaign',
-      instances: ['div[class*="BannerFullHeightWrapper-module"][class*="bannerFullHeightWrapper"]:has([class*="TextStyles-module"][class*="textShadow"])']
+      instances: ['div[class*="BannerFullHeightWrapper-module"][class*="bannerFullHeightWrapper"]']
     },
     {
       name: 'hero-branded',

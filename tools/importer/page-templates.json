@@ -13,7 +13,7 @@
         {
           "name": "hero-campaign",
           "instances": [
-            "div[class*=\"BannerFullHeightWrapper-module\"][class*=\"bannerFullHeightWrapper\"]:has([class*=\"TextStyles-module\"][class*=\"textShadow\"])"
+            "div[class*=\"BannerFullHeightWrapper-module\"][class*=\"bannerFullHeightWrapper\"]"
           ]
         },
         {

@@ -43,12 +43,13 @@ var CustomImportScript = (() => {
 
   // tools/importer/parsers/hero-campaign.js
   function parse(element, { document }) {
+    if (element.querySelector('[class*="HeroBannerShopTitleImage-module"]')) return;
     const video = element.querySelector("video");
     const picture = element.querySelector("picture");
-    const img = element.querySelector("img");
-    const heading = element.querySelector("h2, h1");
-    const ctaTextEl = element.querySelector('[class*="HeroBannerShopCtas-module"], [class*="heroBannerShopCtaText"]');
-    const parentLink = element.parentElement && element.parentElement.tagName === "A" ? element.parentElement : element.querySelector("a");
+    const img = element.querySelector('img[class*="BannerResponsiveImage"]') || element.querySelector("img");
+    const heading = element.querySelector('[class*="heroBannerShopTitle"], h2, h1');
+    const ctaTextEl = element.querySelector('[class*="heroBannerShopCtaText"], [class*="HeroBannerShopCtas-module"]');
+    const parentLink = element.closest("a") || (element.parentElement && element.parentElement.tagName === "A" ? element.parentElement : null) || element.querySelector("a");
     const cells = [];
     if (video) {
       const posterUrl = video.getAttribute("poster") || "";
@@ -59,9 +60,9 @@ var CustomImportScript = (() => {
         cells.push([posterImg]);
       }
     } else if (picture) {
-      cells.push([picture]);
+      cells.push([picture.cloneNode(true)]);
     } else if (img) {
-      cells.push([img]);
+      cells.push([img.cloneNode(true)]);
     }
     if (heading) {
       const h = document.createElement("h1");
@@ -75,16 +76,13 @@ var CustomImportScript = (() => {
       ctaLink.href = ctaHref;
       ctaLink.textContent = ctaText;
       cells.push([ctaLink]);
-    } else if (ctaText) {
-      const p = document.createElement("p");
-      p.textContent = ctaText;
-      cells.push([p]);
     } else if (ctaHref) {
       const ctaLink = document.createElement("a");
       ctaLink.href = ctaHref;
-      ctaLink.textContent = ctaHref;
+      ctaLink.textContent = "Descubre m\xE1s";
       cells.push([ctaLink]);
     }
+    if (cells.length === 0) return;
     const block = WebImporter.Blocks.createBlock(document, { name: "hero-campaign", cells });
     element.replaceWith(block);
   }
@@ -330,7 +328,7 @@ var CustomImportScript = (() => {
     blocks: [
       {
         name: "hero-campaign",
-        instances: ['div[class*="BannerFullHeightWrapper-module"][class*="bannerFullHeightWrapper"]:has([class*="TextStyles-module"][class*="textShadow"])']
+        instances: ['div[class*="BannerFullHeightWrapper-module"][class*="bannerFullHeightWrapper"]']
       },
       {
         name: "hero-branded",
