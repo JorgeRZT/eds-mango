@@ -116,8 +116,7 @@ export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  let fragment = await loadFragment(navPath);
-  if (!fragment) fragment = await loadFragment('/content/nav');
+  const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
   block.textContent = '';
@@ -126,8 +125,9 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
   const classes = ['brand', 'sections', 'tools'];
+  const sections = [...nav.querySelectorAll(':scope > .section')];
   classes.forEach((c, i) => {
-    const section = nav.children[i];
+    const section = sections[i] || nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
 
