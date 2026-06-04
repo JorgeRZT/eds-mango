@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-category",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-04T13:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://shop.mango.com/es/es/h/home",
+    "originPage": "Mango Home homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "category-navigation",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2 columns with large image + heading overlay per column",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "category navigation tiles with images",
+      "2-up image grid with text overlays",
+      "product category landing pages",
+      "visual navigation between major site sections"
+    ],
+    "notSuitableFor": [
+      "text-heavy side-by-side content",
+      "columns with different content types per column",
+      "layouts requiring more than 2 columns"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/es/es/h/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-04T13:30:00.000Z"
+  }
+}

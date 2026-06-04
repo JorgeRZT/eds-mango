@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-campaign",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-04T13:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://shop.mango.com/es/es/h/home",
+    "originPage": "Mango Home homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "campaign-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background video/image + heading + CTA link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "full-viewport campaign banners with video or image background",
+      "seasonal collection landing pages",
+      "product category hero sections",
+      "promotional campaign splash screens"
+    ],
+    "notSuitableFor": [
+      "text-heavy hero sections without media",
+      "heroes with multiple CTA buttons",
+      "compact heroes that are not full-viewport"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/es/es/h/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-04T13:30:00.000Z"
+  }
+}

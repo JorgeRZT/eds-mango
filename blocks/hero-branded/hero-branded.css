@@ -1,0 +1,100 @@
+/* Block: hero-branded
+ * Full-viewport banner with background image, centered logo, and CTA.
+ * Extracted values from: https://shop.mango.com/es/es/h/home
+ */
+
+/* Full-width wrapper override */
+.hero-branded-container .hero-branded-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Block root */
+.hero-branded {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+  background-color: rgb(255 255 255);
+}
+
+/* Row 1: Background image row - positioned absolute to fill block */
+.hero-branded > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Row 2: Content overlay - centered logo + CTA */
+.hero-branded > div:last-child {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 32px;
+  min-height: 80svh;
+  gap: 12px;
+  text-align: center;
+}
+
+.hero-branded > div:first-child > div {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-branded > div:first-child picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-branded > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Logo image */
+.hero-branded > div:last-child img {
+  max-width: 360px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* CTA text styling */
+.hero-branded > div:last-child a:any-link {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--heading-font-family);
+  color: rgb(253 253 253);
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: normal;
+}
+
+.hero-branded > div:last-child a:hover {
+  text-decoration: underline;
+}
+
+/* Reset paragraph wrapping from EDS DOM mangling */
+.hero-branded > div:last-child p {
+  margin: 0;
+  padding: 0;
+}
+
+/* no-image variant (no background) */
+.hero-branded.no-image > div:last-child a:any-link {
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  .hero-branded > div:last-child img {
+    max-width: 550px;
+  }
+}

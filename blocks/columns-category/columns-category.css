@@ -1,0 +1,73 @@
+/* Block: columns-category
+ * Two category images side-by-side (50/50), edge-to-edge, no gap.
+ * Each column is a clickable link with image and text label at the bottom.
+ * Source: Mango Home — FamilyBannerShop-module */
+
+/* Full-width wrapper override */
+.columns-category-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Stack on mobile */
+.columns-category > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Each cell takes full width on mobile */
+.columns-category > div > div {
+  position: relative;
+  width: 100%;
+}
+
+/* The category link wrapper — fills cell, square aspect ratio */
+.columns-category .category-link {
+  display: block;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Image fills the link container absolutely */
+.columns-category .category-link picture {
+  position: absolute;
+  inset: 0;
+}
+
+.columns-category .category-link picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Category label at the bottom, overlaying the image */
+.columns-category .category-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: rgb(253 253 253);
+}
+
+/* Desktop: side by side, no gap */
+@media (width >= 900px) {
+  .columns-category > div {
+    flex-direction: row;
+  }
+
+  .columns-category > div > div {
+    flex: 1;
+  }
+}

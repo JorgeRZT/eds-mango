@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-branded",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-04T13:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://shop.mango.com/es/es/h/home",
+    "originPage": "Mango Home homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "branded-promo",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background image + logo image + CTA link",
+    "buttonCount": 1,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "brand/club promotional banners with logo imagery",
+      "loyalty program promotional sections",
+      "partnership or sub-brand feature sections",
+      "full-viewport banners with logo instead of text heading"
+    ],
+    "notSuitableFor": [
+      "standard hero sections with text headings",
+      "heroes with video backgrounds",
+      "compact promotional banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/es/es/h/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-04T13:30:00.000Z"
+  }
+}

@@ -1,0 +1,141 @@
+/* hero-campaign block - full-viewport banner with background image/video and centered text overlay */
+
+.hero-campaign-container .hero-campaign-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.hero-campaign {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100svh - var(--nav-height));
+}
+
+/* Row layout */
+.hero-campaign > div {
+  display: contents;
+}
+
+/* Image cell - background */
+.hero-campaign > div > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-campaign > div > div:first-child picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-campaign > div > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text cell - overlay */
+.hero-campaign > div > div:last-child {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 0 16px;
+  text-shadow: rgb(19 19 19 / 20%) 0 0 14px;
+}
+
+/* Headings */
+.hero-campaign h1,
+.hero-campaign h2,
+.hero-campaign h3,
+.hero-campaign h4,
+.hero-campaign h5,
+.hero-campaign h6 {
+  color: rgb(253 253 253);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 40px;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  margin: 0;
+  max-width: none;
+}
+
+/* CTA / link text */
+.hero-campaign p {
+  color: rgb(253 253 253);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  margin: 0;
+}
+
+.hero-campaign a:any-link {
+  color: rgb(253 253 253);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Reset EDS button styling within hero-campaign */
+main .hero-campaign a.button:any-link {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: rgb(253 253 253);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: normal;
+}
+
+/* No-image variant (text on white) */
+.hero-campaign.no-image > div > div:last-child {
+  text-shadow: none;
+}
+
+.hero-campaign.no-image h1,
+.hero-campaign.no-image h2,
+.hero-campaign.no-image h3,
+.hero-campaign.no-image h4,
+.hero-campaign.no-image h5,
+.hero-campaign.no-image h6,
+.hero-campaign.no-image p,
+.hero-campaign.no-image a:any-link {
+  color: var(--text-color);
+}
+
+main .hero-campaign.no-image a.button:any-link {
+  color: var(--text-color);
+}
+
+/* Desktop */
+@media (width >= 900px) {
+  .hero-campaign > div > div:last-child {
+    padding: 0 32px;
+  }
+
+  .hero-campaign h1,
+  .hero-campaign h2,
+  .hero-campaign h3,
+  .hero-campaign h4,
+  .hero-campaign h5,
+  .hero-campaign h6 {
+    font-size: 68px;
+    line-height: 72px;
+  }
+}

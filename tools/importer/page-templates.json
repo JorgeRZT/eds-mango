@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://shop.mango.com/es/es/h/home"
+      ],
+      "description": "Mango homepage with hero banners, product categories, and promotional content",
+      "blocks": [
+        {
+          "name": "hero-campaign",
+          "instances": [
+            "div[class*=\"BannerFullHeightWrapper-module\"][class*=\"bannerFullHeightWrapper\"]:has([class*=\"TextStyles-module\"][class*=\"textShadow\"])"
+          ]
+        },
+        {
+          "name": "hero-branded",
+          "instances": [
+            "a[href*=\"mango-style-club\"][class*=\"BannerBackgroundLinkWrapper-module\"]"
+          ]
+        },
+        {
+          "name": "columns-category",
+          "instances": [
+            "div[class*=\"FamilyBannerShop-module\"][class*=\"root\"]"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "SEO Category Navigation",
+          "selector": "div[class*=\"SeoBanner-module\"][class*=\"root\"]",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "div[class*=\"SeoBanner-module\"][class*=\"root\"] h1",
+            "div[class*=\"SeoBanner-module\"][class*=\"root\"] ul"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "Hero New Now",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"][class*=\"bannerFullHeightWrapper\"]:nth-of-type(1)",
+          "style": null,
+          "blocks": [
+            "hero-campaign"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Category Columns 1",
+          "selector": "div[class*=\"FamilyBannerShop-module\"][class*=\"root\"]:nth-of-type(1)",
+          "style": null,
+          "blocks": [
+            "columns-category"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Category Columns 2",
+          "selector": "div[class*=\"FamilyBannerShop-module\"][class*=\"root\"]:nth-of-type(2)",
+          "style": null,
+          "blocks": [
+            "columns-category"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Hero Summer Living",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"][class*=\"bannerFullHeightWrapper\"]:nth-of-type(2)",
+          "style": null,
+          "blocks": [
+            "hero-campaign"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Hero Pijamas",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"][class*=\"bannerFullHeightWrapper\"]:nth-of-type(3)",
+          "style": null,
+          "blocks": [
+            "hero-campaign"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Hero Total White",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"][class*=\"bannerFullHeightWrapper\"]:nth-of-type(4)",
+          "style": null,
+          "blocks": [
+            "hero-campaign"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Hero Lino",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"][class*=\"bannerFullHeightWrapper\"]:nth-of-type(5)",
+          "style": null,
+          "blocks": [
+            "hero-campaign"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "Hero Mango Style Club",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"][class*=\"bannerFullHeightWrapper\"]:nth-of-type(6)",
+          "style": null,
+          "blocks": [
+            "hero-branded"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-10",
+          "name": "Newsletter Subscription",
+          "selector": "div[class*=\"Footer-module\"][class*=\"footer\"]",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "div[class*=\"Footer-module\"] [class*=\"title\"]",
+            "div[class*=\"Footer-module\"] form"
+          ]
+        }
+      ]
+    }
+  ]
+}
