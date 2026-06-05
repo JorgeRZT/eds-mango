@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-banner",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-05T08:48:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://shop.mango.com/es/es/h/home",
+    "originPage": "Mango Home homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "category-banners",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2 columns with image + heading link each",
+    "buttonCount": 0,
+    "imageCount": 2,
+    "hasVideo": false
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "side-by-side category navigation banners",
+      "two-column image link grids",
+      "paired promotional image tiles with overlay headings"
+    ],
+    "notSuitableFor": [
+      "text-heavy side-by-side content",
+      "columns with different widths",
+      "columns with more than 2 items"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/es/es/h/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-05T08:48:00.000Z"
+  }
+}

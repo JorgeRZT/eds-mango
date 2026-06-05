@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://shop.mango.com/es/es/h/home"
+      ],
+      "description": "Mango online shop homepage with hero banners, product categories, and promotional content",
+      "blocks": [
+        {
+          "name": "hero-video",
+          "instances": [
+            "div[class*=\"BannerFullHeightWrapper-module\"]:has([class*=\"Video-module\"][class*=\"videoContainer\"])"
+          ]
+        },
+        {
+          "name": "hero-banner",
+          "instances": [
+            "div[class*=\"BannerFullHeightWrapper-module\"]:has(picture):not(:has(video)):not(:has([class*=\"HeroBannerShopTitleImage\"]))"
+          ]
+        },
+        {
+          "name": "hero-promo",
+          "instances": [
+            "div[class*=\"BannerFullHeightWrapper-module\"]:has([class*=\"HeroBannerShopTitleImage\"])"
+          ]
+        },
+        {
+          "name": "columns-banner",
+          "instances": [
+            "div[class*=\"FamilyBannerShop-module\"][class*=\"root\"]"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "SEO Category Navigation",
+          "selector": "div[class*=\"SeoBanner-module\"][class*=\"root\"]",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "h1[class*=\"SeoBanner-module\"][class*=\"title\"]",
+            "ul[class*=\"SeoBanner-module\"][class*=\"linkList\"]"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "Hero Video Banner - NEW NOW",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"]:has([class*=\"Video-module\"]):nth-of-type(1)",
+          "style": null,
+          "blocks": [
+            "hero-video"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Category Banners Row 1",
+          "selector": "div[class*=\"FamilyBannerShop-module\"][class*=\"root\"]:nth-of-type(1)",
+          "style": null,
+          "blocks": [
+            "columns-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Category Banners Row 2",
+          "selector": "div[class*=\"FamilyBannerShop-module\"][class*=\"root\"]:nth-of-type(2)",
+          "style": null,
+          "blocks": [
+            "columns-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Video Banner - SUMMER LIVING",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"]:has([class*=\"Video-module\"]):nth-of-type(2)",
+          "style": null,
+          "blocks": [
+            "hero-video"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Video Banner - PIJAMAS",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"]:has([class*=\"Video-module\"]):nth-of-type(3)",
+          "style": null,
+          "blocks": [
+            "hero-video"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Image Banner - TOTAL WHITE",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"]:has(picture):not(:has(video)):not(:has([class*=\"HeroBannerShopTitleImage\"])):nth-of-type(1)",
+          "style": null,
+          "blocks": [
+            "hero-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Image Banner - LINO",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"]:has(picture):not(:has(video)):not(:has([class*=\"HeroBannerShopTitleImage\"])):nth-of-type(2)",
+          "style": null,
+          "blocks": [
+            "hero-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "Mango Style Club Banner",
+          "selector": "div[class*=\"BannerFullHeightWrapper-module\"]:has([class*=\"HeroBannerShopTitleImage\"])",
+          "style": null,
+          "blocks": [
+            "hero-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-10",
+          "name": "Newsletter Signup",
+          "selector": "div[class*=\"Footer-module\"][class*=\"footer\"]",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "h2",
+            "form[class*=\"Form-module\"]"
+          ]
+        }
+      ]
+    }
+  ]
+}

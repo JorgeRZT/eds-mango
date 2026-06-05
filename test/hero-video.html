@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <link rel="stylesheet" href="/blocks/hero-video/hero-video.css"/>
+  <style>
+    body { display: block !important; margin: 0; font-family: var(--body-font-family); }
+  </style>
+</head>
+<body class="appear">
+  <main>
+    <div class="section hero-video-container">
+      <div class="hero-video-wrapper">
+        <div class="hero-video block" data-block-name="hero-video" data-block-status="loaded">
+          <div class="hero-video-bg">
+            <video src="https://media.mango.com/is/content/punto/LANDING_Toallas_4Mb-0x1080-4000k" autoplay muted loop playsinline></video>
+          </div>
+          <div class="hero-video-content">
+            <h2>NEW NOW</h2>
+            <p class="hero-video-cta"><a href="https://shop.mango.com/es/es/i/home/outdoors-hours/27daf4c2">Descubre mas</a></p>
+          </div>
+          <button class="hero-video-control" aria-label="Pausar" aria-pressed="true" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" width="16" height="16" class="icon-pause"><path d="M6 13H5V3h1zm5 0h-1V3h1z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" width="16" height="16" class="icon-play"><path fill-rule="evenodd" d="M14 8 4 13.196V2.804zm-9 3.55L11.831 8 5 4.45z" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    const btn = document.querySelector('.hero-video-control');
+    const video = document.querySelector('.hero-video-bg video');
+    if (btn && video) {
+      btn.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          btn.setAttribute('aria-label', 'Pausar');
+          btn.classList.remove('paused');
+        } else {
+          video.pause();
+          btn.setAttribute('aria-label', 'Reproducir');
+          btn.classList.add('paused');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

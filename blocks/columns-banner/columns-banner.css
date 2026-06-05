@@ -1,0 +1,89 @@
+/* Block: columns-banner
+ * Two side-by-side image banners with overlaid category headings.
+ * Values from source computed styles (shop.mango.com).
+ *
+ * Source layout at 780px viewport: flex row, two 390px columns, 546px height, 0 gap.
+ * Text overlay at bottom-left with 24px padding, white uppercase text.
+ */
+
+.columns-banner {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  padding: 0;
+}
+
+.columns-banner .columns-banner-col {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.columns-banner .columns-banner-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 390 / 546;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.columns-banner .columns-banner-link picture {
+  position: absolute;
+  inset: 0;
+}
+
+.columns-banner .columns-banner-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.columns-banner .columns-banner-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.columns-banner .columns-banner-label strong {
+  font-family: var(--heading-font-family);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: rgb(253 253 253);
+  margin: 0;
+}
+
+/* Button reset - EDS may auto-decorate links */
+main .columns-banner a.button:any-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+  font-weight: inherit;
+  display: block;
+}
+
+main .columns-banner .button-container {
+  display: contents;
+}
+
+/* Mobile: stack vertically on very small screens */
+@media (width < 600px) {
+  .columns-banner {
+    flex-direction: column;
+  }
+
+  .columns-banner .columns-banner-link {
+    aspect-ratio: 1 / 1;
+  }
+}

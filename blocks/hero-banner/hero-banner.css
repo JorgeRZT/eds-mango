@@ -1,0 +1,150 @@
+/* hero-banner: full-width/full-height static image with centered text overlay */
+
+/* Full-width wrapper override */
+.hero-banner-container .hero-banner-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Block root - fills viewport height minus nav, acts as positioning context */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* Rows: transparent layout containers */
+.hero-banner > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* First row contains the background image - absolute fill */
+.hero-banner > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Cell within image row */
+.hero-banner > div:first-child > div {
+  position: absolute;
+  inset: 0;
+}
+
+/* Picture element fills container */
+.hero-banner picture {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: 50% 0%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+/* Heading styles */
+.hero-banner h1,
+.hero-banner h2,
+.hero-banner h3,
+.hero-banner h4,
+.hero-banner h5,
+.hero-banner h6 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: var(--heading-font-family);
+  line-height: 40px;
+  text-transform: uppercase;
+  color: rgb(253 253 253);
+  text-shadow: rgb(19 19 19 / 20%) 0 0 14px;
+  margin: 0;
+}
+
+/* CTA paragraph */
+.hero-banner p {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(253 253 253);
+  text-transform: uppercase;
+  margin: 8px 0 0;
+}
+
+/* Links - white CTA style */
+.hero-banner a:any-link {
+  color: rgb(253 253 253);
+  text-decoration: none;
+}
+
+.hero-banner a:hover {
+  text-decoration: underline;
+}
+
+/* Reset EDS button styling within hero-banner */
+main .hero-banner a.button:any-link {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: rgb(253 253 253);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  display: inline;
+  white-space: normal;
+}
+
+main .hero-banner a.button:hover {
+  text-decoration: underline;
+  background: none;
+}
+
+/* Button container reset */
+.hero-banner .button-container {
+  display: inline;
+}
+
+/* No-image variant fallback */
+.hero-banner.no-image {
+  background-color: var(--light-color);
+  min-height: 300px;
+}
+
+.hero-banner.no-image h1,
+.hero-banner.no-image h2,
+.hero-banner.no-image h3,
+.hero-banner.no-image h4,
+.hero-banner.no-image h5,
+.hero-banner.no-image h6,
+.hero-banner.no-image p {
+  color: var(--text-color);
+  text-shadow: none;
+}
+
+.hero-banner.no-image a:any-link,
+main .hero-banner.no-image a.button:any-link {
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  .hero-banner h1,
+  .hero-banner h2,
+  .hero-banner h3,
+  .hero-banner h4,
+  .hero-banner h5,
+  .hero-banner h6 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}

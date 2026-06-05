@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-video",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-05T08:48:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://shop.mango.com/es/es/h/home",
+    "originPage": "Mango Home homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "video-hero",
+    "imagePattern": "video"
+  },
+  "contentPattern": {
+    "structure": "video background + heading + CTA",
+    "buttonCount": 1,
+    "imageCount": 0,
+    "hasVideo": true
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "landing pages with video backgrounds",
+      "campaign hero sections with autoplay video",
+      "full-width video banners with text overlay"
+    ],
+    "notSuitableFor": [
+      "static image heroes",
+      "heroes with multiple CTAs",
+      "heroes with detailed descriptions"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/es/es/h/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-05T08:48:00.000Z"
+  }
+}
