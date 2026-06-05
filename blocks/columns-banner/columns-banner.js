@@ -32,6 +32,10 @@ export default function decorate(block) {
   // Clear the block
   block.innerHTML = '';
 
+  if (colCount === 1) {
+    block.classList.add('single');
+  }
+
   for (let i = 0; i < colCount; i += 1) {
     const col = document.createElement('div');
     col.className = 'columns-banner-col';

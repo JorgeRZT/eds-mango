@@ -77,6 +77,30 @@ main .columns-banner .button-container {
   display: contents;
 }
 
+/* Single column variant - centered text like hero-banner */
+.columns-banner.single .columns-banner-link {
+  aspect-ratio: 7 / 3;
+}
+
+.columns-banner.single .columns-banner-label {
+  bottom: unset;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.columns-banner.single .columns-banner-label strong {
+  font-size: 40px;
+  line-height: 1;
+  text-shadow: rgb(19 19 19 / 20%) 0 0 14px;
+}
+
 /* Mobile: stack vertically on very small screens */
 @media (width < 600px) {
   .columns-banner {
@@ -85,5 +109,13 @@ main .columns-banner .button-container {
 
   .columns-banner .columns-banner-link {
     aspect-ratio: 1 / 1;
+  }
+
+  .columns-banner.single .columns-banner-link {
+    aspect-ratio: 7 / 3;
+  }
+
+  .columns-banner.single .columns-banner-label strong {
+    font-size: 28px;
   }
 }
