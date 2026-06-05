@@ -1,0 +1,97 @@
+/* category-nav — horizontal scrolling category links */
+
+.category-nav-container .category-nav-wrapper {
+  max-width: 100% !important;
+  padding: 0 16px !important;
+}
+
+.category-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.category-nav-heading {
+  flex-shrink: 0;
+}
+
+.category-nav-heading h1,
+.category-nav-heading h2,
+.category-nav-heading h3 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.category-nav-scroll {
+  overflow: auto hidden;
+  scrollbar-width: none;
+  flex: 1;
+}
+
+.category-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.category-nav-list {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.category-nav-list li {
+  flex-shrink: 0;
+}
+
+.category-nav-list a {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.category-nav-list a:hover {
+  border-bottom-color: var(--text-color);
+  text-decoration: none;
+}
+
+.category-nav-arrows {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.category-nav-arrows button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-nav-arrows button:hover {
+  opacity: 0.6;
+}
+
+@media (width >= 900px) {
+  .category-nav-container .category-nav-wrapper {
+    padding: 0 24px !important;
+  }
+}

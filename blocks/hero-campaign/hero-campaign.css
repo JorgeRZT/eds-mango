@@ -1,4 +1,4 @@
-/* hero-campaign block - full-viewport carousel with background images and centered text overlay */
+/* hero-campaign block — full-viewport banner with bg image/video + centered text overlay */
 
 .hero-campaign-container .hero-campaign-wrapper {
   max-width: 100% !important;
@@ -10,111 +10,92 @@
   overflow: hidden;
   min-height: calc(100vh - var(--nav-height));
   min-height: calc(100svh - var(--nav-height));
-  outline: none;
 }
 
-/* Carousel wrapper */
-.hero-campaign-slides {
-  position: absolute;
-  inset: 0;
-}
-
-/* Each slide — default: hidden, absolute */
-.hero-campaign-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.hero-campaign-slide.active {
-  opacity: 1;
-}
-
-/* Single-slide layout: direct child, no carousel wrapper */
-.hero-campaign > .hero-campaign-slide {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  min-height: inherit;
-  opacity: 1;
-}
-
-/* Row layout inside each slide */
-.hero-campaign-slide > div {
-  display: contents;
-}
-
-/* Image cell — background */
-.hero-campaign-slide > div > div:first-child {
+/* Background row (image or video) */
+.hero-campaign .hero-campaign-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-.hero-campaign-slide > div > div:first-child picture {
-  display: block;
+.hero-campaign .hero-campaign-bg > div {
   width: 100%;
   height: 100%;
 }
 
-.hero-campaign-slide > div > div:first-child img {
+.hero-campaign .hero-campaign-bg picture,
+.hero-campaign .hero-campaign-bg video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Text cell — overlay */
-.hero-campaign-slide > div > div:last-child {
+.hero-campaign .hero-campaign-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text overlay row */
+.hero-campaign .hero-campaign-text {
   position: absolute;
   inset: 0;
   z-index: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
   text-align: center;
-  padding: 0 16px;
   text-shadow: rgb(19 19 19 / 20%) 0 0 14px;
 }
 
-/* Headings */
-.hero-campaign-slide h1,
-.hero-campaign-slide h2,
-.hero-campaign-slide h3,
-.hero-campaign-slide h4,
-.hero-campaign-slide h5,
-.hero-campaign-slide h6 {
+.hero-campaign .hero-campaign-text > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-campaign .hero-campaign-text h1,
+.hero-campaign .hero-campaign-text h2 {
   color: rgb(253 253 253);
   font-size: 40px;
   font-weight: 600;
-  line-height: 40px;
+  line-height: 1.05;
   text-transform: uppercase;
-  letter-spacing: normal;
-  margin: 0;
-  max-width: none;
-}
-
-/* CTA / link text */
-.hero-campaign-slide p {
-  color: rgb(253 253 253);
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: normal;
   margin: 0;
 }
 
-.hero-campaign-slide a:any-link {
+/* CTA row */
+.hero-campaign .hero-campaign-cta {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.hero-campaign .hero-campaign-cta > div {
+  text-align: center;
+}
+
+.hero-campaign .hero-campaign-cta p {
+  margin: 0;
+}
+
+.hero-campaign .hero-campaign-cta a:any-link {
   color: rgb(253 253 253);
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
+  text-shadow: rgb(19 19 19 / 20%) 0 0 14px;
 }
 
-main .hero-campaign-slide a.button:any-link {
+main .hero-campaign .hero-campaign-cta a.button:any-link {
   background: none;
   border: none;
   border-radius: 0;
@@ -128,65 +109,10 @@ main .hero-campaign-slide a.button:any-link {
   white-space: normal;
 }
 
-/* No-image variant */
-.hero-campaign-slide.no-image > div > div:last-child {
-  text-shadow: none;
-}
-
-.hero-campaign-slide.no-image h1,
-.hero-campaign-slide.no-image h2,
-.hero-campaign-slide.no-image h3,
-.hero-campaign-slide.no-image h4,
-.hero-campaign-slide.no-image h5,
-.hero-campaign-slide.no-image h6,
-.hero-campaign-slide.no-image p,
-.hero-campaign-slide.no-image a:any-link {
-  color: var(--text-color);
-}
-
-main .hero-campaign-slide.no-image a.button:any-link {
-  color: var(--text-color);
-}
-
-/* Dot navigation */
-.hero-campaign-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  display: flex;
-  gap: 8px;
-}
-
-.hero-campaign-dots button {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: none;
-  padding: 0;
-  background-color: rgb(255 255 255 / 50%);
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.hero-campaign-dots button.active {
-  background-color: rgb(255 255 255);
-  transform: scale(1.3);
-}
-
 /* Desktop */
 @media (width >= 900px) {
-  .hero-campaign-slide > div > div:last-child {
-    padding: 0 32px;
-  }
-
-  .hero-campaign-slide h1,
-  .hero-campaign-slide h2,
-  .hero-campaign-slide h3,
-  .hero-campaign-slide h4,
-  .hero-campaign-slide h5,
-  .hero-campaign-slide h6 {
+  .hero-campaign .hero-campaign-text h1,
+  .hero-campaign .hero-campaign-text h2 {
     font-size: 68px;
     line-height: 72px;
   }
