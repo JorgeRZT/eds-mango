@@ -1,20 +1,106 @@
+/* Mango-style footer: social row, links in columns, legal row */
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--background-color);
+  font-size: 12px;
+  border-top: 1px solid #e5e5e5;
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 24px 32px;
 }
 
 footer .footer p {
   margin: 0;
+  font-size: 11px;
 }
 
-@media (width >= 900px) {
+footer .footer .section {
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* All lists: horizontal, no bullets, uppercase */
+footer .footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+footer .footer li {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+footer .footer a:any-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer .footer a:hover {
+  text-decoration: underline;
+}
+
+/* Middle section (has multiple ul): grid layout for service links */
+footer .footer .default-content-wrapper:has(ul + ul) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 32px;
+}
+
+footer .footer .default-content-wrapper:has(ul + ul) ul {
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Last section: legal links left + copyright right */
+footer .footer .section:last-of-type {
+  border-bottom: none;
+  padding-top: 32px;
+}
+
+footer .footer .section:last-of-type .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+footer .footer .section:last-of-type ul {
+  gap: 8px 16px;
+}
+
+footer .footer .section:last-of-type li {
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+footer .footer .section:last-of-type a {
+  font-weight: 400;
+  font-size: 11px;
+}
+
+@media (width < 900px) {
+  footer .footer .default-content-wrapper:has(ul + ul) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width < 600px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 16px;
+  }
+
+  footer .footer .section:last-of-type .default-content-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
