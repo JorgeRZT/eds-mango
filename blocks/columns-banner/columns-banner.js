@@ -1,20 +1,3 @@
-/**
- * Columns Banner Block
- * Two side-by-side image banners with category headings overlaid.
- *
- * Content structure (authored):
- *   Row 1: image links (image URLs as link hrefs - EDS auto-converts to <picture>)
- *   Row 2: headings (strong text for each column)
- *   Row 3: category links (the destination URLs)
- *
- * Decorated structure:
- *   .columns-banner
- *     .columns-banner-col (one per column)
- *       a.columns-banner-link (wraps everything, links to category)
- *         picture > img (the banner image)
- *         .columns-banner-label
- *           strong (category name)
- */
 export default function decorate(block) {
   const rows = [...block.children];
   if (rows.length < 3) return;
@@ -29,10 +12,10 @@ export default function decorate(block) {
 
   const colCount = imageCells.length;
 
-  // Clear the block
   block.innerHTML = '';
 
-  if (colCount === 1) {
+  const isSingle = colCount === 1;
+  if (isSingle) {
     block.classList.add('single');
   }
 
@@ -40,17 +23,20 @@ export default function decorate(block) {
     const col = document.createElement('div');
     col.className = 'columns-banner-col';
 
-    // Get the category link URL from row 3
     const linkEl = linkCells[i]?.querySelector('a');
     const categoryUrl = linkEl ? linkEl.href : '#';
 
-    // Get the picture element from row 1 (EDS auto-converts image URL links to <picture>)
     const picture = imageCells[i]?.querySelector('picture');
 
-    // Get the heading text from row 2
-    const headingText = headingCells[i]?.textContent?.trim() || '';
+    const strongEl = headingCells[i]?.querySelector('strong');
+    const headingText = strongEl ? strongEl.textContent.trim() : '';
 
-    // Build the column structure
+    const cellText = headingCells[i]?.textContent?.trim() || '';
+    let ctaText = cellText.replace(headingText, '').trim();
+    if (!ctaText) {
+      ctaText = isSingle ? 'Descubre más' : 'Ver todo';
+    }
+
     const anchor = document.createElement('a');
     anchor.className = 'columns-banner-link';
     anchor.href = categoryUrl;
@@ -65,6 +51,12 @@ export default function decorate(block) {
       const strong = document.createElement('strong');
       strong.textContent = headingText;
       label.appendChild(strong);
+
+      const cta = document.createElement('span');
+      cta.className = 'columns-banner-cta';
+      cta.textContent = ctaText;
+      label.appendChild(cta);
+
       anchor.appendChild(label);
     }
 
